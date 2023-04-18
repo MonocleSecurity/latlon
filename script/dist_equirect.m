@@ -5,7 +5,7 @@ function [d,x,y] = dist_equirect(lat1, lon1, lat2, lon2)
     phi2 = lat2 * RAD;
     dlam = (lon2-lon1) * RAD;
 
-    x = dlam * cos((phi1+phi2)/2);
-    y = (phi2-phi1);
-    d = sqrt(x*x + y*y)*R;
+    x = dlam * cos((phi1+phi2)/2)*R;
+    y = (phi2-phi1)*R;
+    d = sqrt(x*x + y*y);
 end

@@ -1,4 +1,4 @@
-function d = dist_haversine(lat1, lon1, lat2, lon2)
+function [d,a] = dist_haversine(lat1, lon1, lat2, lon2)
     R = 6371e3;
     RAD = pi/180;
     phi1 = lat1 * RAD;
