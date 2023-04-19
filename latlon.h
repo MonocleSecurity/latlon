@@ -90,5 +90,14 @@ inline void destination(double &lat, double &lon, double lat1, double lon1,
 }
 
 inline void cartesian(double &x, double &y, double lat, double lon, double lat0,
-                      double lon0) {}
+                      double lon0) {
+  lat0 *= RAD;
+  lon0 *= RAD;
+  lat *= RAD;
+  lon *= RAD;
+
+  const double dlon{lon - lon0};
+  x = dlon * cos(lat / 2.0 + lat0 / 2.0) * R_EARTH;
+  y = (lat - lat0) * R_EARTH;
+}
 } // namespace LatLon
