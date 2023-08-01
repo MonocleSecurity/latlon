@@ -1,12 +1,11 @@
 #pragma once
 #include <math.h>
-#include <numbers>
 
 namespace LatLon {
-inline constexpr double PI{std::numbers::pi_v<double>};
-inline constexpr double PI2{std::numbers::pi_v<double> * 2.0};
-inline constexpr double RAD{std::numbers::pi_v<double> / 180.0};
-inline constexpr double DEG{180.0 / std::numbers::pi_v<double>};
+inline constexpr double PI{3.14159265359};
+inline constexpr double PI2{PI * 2.0};
+inline constexpr double RAD{PI / 180.0};
+inline constexpr double DEG{180.0 / PI};
 inline constexpr double R_EARTH{6371e3};
 
 inline constexpr double dmsToDeg(double d, double m, const double s,
